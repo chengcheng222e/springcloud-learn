@@ -30,7 +30,7 @@
         <module>trace-b</module>
         <module>trace-c</module>
         <module>zipkin-server</module>
-        <module>stream-provider</module>
+        <!--<module>stream-provider</module>-->
         <module>stream-consumer</module>
         <module>api-gateway</module>
         <module>turbine</module>
