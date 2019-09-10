@@ -2,7 +2,7 @@ package com.allei;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -19,9 +19,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @EnableDiscoveryClient
 @SpringBootApplication
+@Slf4j
 public class TraceAApplication {
-
-	private final Logger logger = Logger.getLogger(getClass());
 
 //	@Bean
 //	public AlwaysSampler defaultSampler() {
@@ -36,7 +35,7 @@ public class TraceAApplication {
 
 	@RequestMapping(value = "/trace-a", method = RequestMethod.GET)
 	public String trace() throws InterruptedException {
-		logger.info("call trace-a----->");
+		log.info("call trace-a----->");
 		TimeUnit.SECONDS.sleep(1l);
 		return restTemplate().getForEntity("http://trace-b/trace-b", String.class).getBody();
 	}
