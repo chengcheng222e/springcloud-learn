@@ -22,12 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    private final Logger    logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private DiscoveryClient client;
+
     @Value("${server.port}")
-    private Integer         port;
+    private Integer port;
 
     //@Autowired
     //private Registration    registration;
@@ -40,7 +41,7 @@ public class HelloController {
         return r;
     }
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello-service/hello", method = RequestMethod.GET)
     public String hello() {
         try {
             TimeUnit.SECONDS.sleep(RandomUtils.nextInt(3));
