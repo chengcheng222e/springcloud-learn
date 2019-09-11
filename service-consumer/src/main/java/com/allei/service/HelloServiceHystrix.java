@@ -12,13 +12,11 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @Service
 public class HelloServiceHystrix {
 
-
-    @Resource
-    private RestTemplate restTemplate;
-
     @HystrixCommand(fallbackMethod = "helloFallback")
     public String hello(){
-        return restTemplate.getForEntity("http://hello-service/hello", String.class).getBody();
+        RestTemplate restTemplate = new RestTemplate();
+        String resp = restTemplate.getForEntity("http://localhost:8082/hello", String.class).getBody();
+        return resp;
     }
 
     public String helloFallback(){

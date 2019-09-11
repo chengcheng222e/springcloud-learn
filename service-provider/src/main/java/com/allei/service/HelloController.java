@@ -41,13 +41,8 @@ public class HelloController {
         return r;
     }
 
-    @RequestMapping(value = "/hello-service/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        try {
-            TimeUnit.SECONDS.sleep(RandomUtils.nextInt(3));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return "hello:" + port;
     }
 }

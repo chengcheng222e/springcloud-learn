@@ -22,7 +22,7 @@ public class ConsumerController {
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForEntity("http://localhost:8081/hello", String.class).getBody();
+        return restTemplate.getForEntity("http://localhost:8082/hello", String.class).getBody();
     }
 
     @RequestMapping(value = "/helloRobbin", method = RequestMethod.GET)
