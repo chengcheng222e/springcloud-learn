@@ -12,24 +12,30 @@
     <groupId>com.allei</groupId>
     <artifactId>zipkin-server</artifactId>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <zipkin.version>2.11.13</zipkin.version>
+        <mysql-connector.version>8.0.13</mysql-connector.version>
+        <jooq.version>3.11.11</jooq.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
-            <version>2.9.3</version>
+            <version>${zipkin.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-autoconfigure-ui</artifactId>
-            <version>2.9.3</version>
+            <version>${zipkin.version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>io.zipkin.java</groupId>-->
-            <!--<artifactId>zipkin-autoconfigure-storage-mysql</artifactId>-->
-            <!--<version>2.9.3</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,6 +53,33 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+
+        <!--对于存储的支持 start-->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>${jooq.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-storage-mysql</artifactId>
+            <version>${zipkin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.24</version>
+        </dependency>
+
+        <!--对于存储的支持 end-->
+
         <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->
             <!--<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>-->
@@ -55,5 +88,12 @@
             <!--<groupId>org.springframework.cloud</groupId>-->
             <!--<artifactId>spring-cloud-starter-stream-rabbit</artifactId>-->
         <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
