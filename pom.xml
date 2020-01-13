@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spring-cloud-dependencies.version>Greenwich.RELEASE</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>Finchley.RELEASE</spring-cloud-dependencies.version>
     </properties>
 
     <modules>
