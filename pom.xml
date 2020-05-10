@@ -39,6 +39,7 @@
         <module>api-gateway</module>
         <module>turbine</module>
         <module>turbine-amqp</module>
+        <module>customs-transaction</module>
     </modules>
 
     <dependencyManagement>
