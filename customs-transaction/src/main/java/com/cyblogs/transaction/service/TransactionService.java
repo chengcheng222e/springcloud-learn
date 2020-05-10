@@ -1,15 +1,10 @@
 package com.cyblogs.transaction.service;
 
-import com.cyblogs.transaction.util.DataSourceConnectHolder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 /**
  * Created with springcloud-learn
