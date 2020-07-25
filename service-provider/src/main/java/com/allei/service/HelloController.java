@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.math.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author alleiming 2017/8/6 下午9:45
  */
 @RestController
+@Slf4j
 public class HelloController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -43,6 +45,7 @@ public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
+        log.info("============ welcome to HelloController ============");
         return "hello:" + port;
     }
 }
